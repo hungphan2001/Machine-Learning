@@ -1,14 +1,24 @@
 from unittest import result
+#pandas đọc file
 import pandas as pd
+# đồ thị 
 import matplotlib.pyplot as plt
-from sklearn.model_selection import train_test_split
-from sklearn.linear_model import LogisticRegression  
 from sklearn.linear_model import LinearRegression
+#PCA 
 from sklearn.decomposition import PCA
-from sklearn.metrics import accuracy_score
 from sklearn.svm import SVC, LinearSVC
 from sklearn.metrics import classification_report
+# ma trận
 from sklearn.metrics import confusion_matrix
+# kỹ thuật học máy
+from sklearn.decomposition import PCA
+# train file csv
+from sklearn.model_selection import train_test_split  
+# kỹ thuật học máy
+from sklearn.linear_model import LogisticRegression  
+# xác định độ chính xác trung bình
+from sklearn.metrics import accuracy_score 
+# thuư viện làm việc với mảng 
 import numpy as np
 # 1a. Đọc file housing1.csv ghi vào frame df_housing
 print("Cau 1:")
