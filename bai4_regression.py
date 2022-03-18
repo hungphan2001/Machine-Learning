@@ -33,8 +33,8 @@ print(results)
 
 #3. Gán X là tất cả các cột có giá trị số của df_house (trừ cột cuối cùng). Hiện thị 10 dòng đầu tiên của X.
 print("Cau 3:")
-X = df_housing.select_dtypes(include=np.number)
-print('10 First line of X :\n', X.head(10))
+X = df_housing.drop(['Price'], axis=1)
+print('\n ----3. 10 DÒNG ĐẦU CỦA X :---\n\n', X.head(10))
 print('=======================================================================================================================')
 
 #4. Gán y là cột cuối cùng của df_house. Hiện thị 10 dòng đầu tiên của y.
