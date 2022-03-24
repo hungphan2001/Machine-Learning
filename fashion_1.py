@@ -42,10 +42,9 @@ print('Precision',precision_score(y_test,y_pred,average='micro'))
 
 #1g (1đ). Dự đoán nhãn của dòng thứ 100 của fashion_df và hiển thị kết quả dự đoán. Chuyển dữ liệu dòng thứ 100 của fashion_df thành một ma trận ảnh gray I, kích thước 28x28. Sử dụng OpenCV để hiển thị ảnh I.print("Cau 6:")
 print("Cau 6:")
-X100 = X[100:101]
-print(X100)
-y_pred_X100 = log_model.predict(X100)
-print('Nhan du doan',y_pred_X100)
-X100 =X100.to_numpy().reshape((28,28))
-grayI = X100.astype(np.uint8)
-cv2.imshow(grayI)
+X4 = X.iloc[4,:]
+print(X4)
+X4 = X4.to_numpy().reshape((28,28))
+
+cv2.imshow("anh",X4.astype(np.uint8))
+cv2.waitKey(0)
