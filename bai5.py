@@ -4,7 +4,7 @@ from sklearn.metrics import classification_report, confusion_matrix, accuracy_sc
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score
-
+from sklearn.model_selection import cross_val_score
 #Dạng 1. Phân lớp nhị phân.
 #1a. Đọc vào file user_data.csv được biến dataframe df. Hiển thị df.
 print("Cau 1:")
@@ -41,4 +41,8 @@ y_pred = model_lf.predict(X_test)
 
 #1g (1đ). Dự báo kết quả và đánh giá độ chính xác dự báo trên tập X_test,y_test.
 print("Cau 6:")
-print("Accuracy Score:", accuracy_score(y_test, y_pred))
+Matrix = confusion_matrix(y_test, y_pred)
+print(Matrix)
+
+evaluate_score = cross_val_score(estimator=model_lf, X = X_test, y = y_test)
+print(evaluate_score)

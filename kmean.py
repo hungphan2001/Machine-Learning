@@ -16,36 +16,36 @@ label_encoder = preprocessing.LabelEncoder()
 filename='car data.csv'
 
 # a
+print('------------------------Câu 1-----------------------------')
 df = pd.read_csv(filename)
-# print(df)
-print('-------------------------------------------------------------------')
+print(df)
 
 # b
+print('------------------------Câu 2-----------------------------')
 data_Fuel_Type = df['Fuel_Type'].unique()
-# print(data_Fuel_Type)
+print(data_Fuel_Type)
 df['Fuel_Type']= label_encoder.fit_transform(df['Fuel_Type'])
 data_Fuel_Type = df['Fuel_Type'].unique()
 df = df.rename(columns=({'Fuel_Type':'Fuel_Type_number'}))
-# print(data_Fuel_Type)
-# print(df)
-print('-------------------------------------------------------------------')
+print(data_Fuel_Type)
+print(df)
 
 # c
+print('------------------------Câu 3-----------------------------')
 X = df[['Selling_Price','Present_Price','Kms_Driven','Fuel_Type_number']]
-# print(X)
-print('-------------------------------------------------------------------')
+print(X)
 
 # d
+print('------------------------Câu 4-----------------------------')
 n_cluster = 5
 model_kmeans = KMeans(n_clusters=n_cluster)
 model_kmeans.fit(X.values)
 print(model_kmeans.labels_)
-print('-------------------------------------------------------------------')
 
 # e
+print('------------------------Câu 5-----------------------------')
 X_5 = X.iloc[4 , :]
 print('X_5')
 print(X_5)
 predicted_class = model_kmeans.predict([list(X_5)])
 print(predicted_class)
-print('-------------------------------------------------------------------')
